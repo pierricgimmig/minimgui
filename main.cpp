@@ -1,12 +1,13 @@
-#include "imgui.h"
+
+#include <GLFW/glfw3.h>
 #include "bindings/imgui_impl_glfw.h"
 #include "bindings/imgui_impl_opengl3.h"
+#include "imgui.h"
 
 #include <stdio.h>
 #include <string>
 
-// Include glfw3.h after our OpenGL definitions
-#include <GLFW/glfw3.h>
+
 
 void UserRender();
 
@@ -50,7 +51,7 @@ int main(int, char **)
 	std::string glsl_version = GetGlslVersion();
 
 	// Create window with graphics context
-	GLFWwindow *window = glfwCreateWindow(1280, 720, "Dear ImGui - Conan", NULL, NULL);
+	GLFWwindow *window = glfwCreateWindow(1280, 720, "minimgui", NULL, NULL);
 	if (window == NULL)
 	{
 		fprintf(stderr, "Failed to create GLFW window.\n");

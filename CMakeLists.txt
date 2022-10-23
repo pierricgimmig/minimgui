@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 project(minimgui CXX)
 
-set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
-set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
+set (CMAKE_CXX_STANDARD 11)
 
-# CONFIG option is important so that CMake doesnt search for modules into the default modules directory
-find_package(imgui CONFIG)
-find_package(glfw3 CONFIG)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo_multi.cmake)
+conan_basic_setup()
 
 add_executable(minimgui
     main.cpp
@@ -15,4 +13,5 @@ add_executable(minimgui
     bindings/imgui_impl_glfw.h
     bindings/imgui_impl_opengl3.h)
 
-target_link_libraries(minimgui imgui::imgui glfw::glfw)
+conan_target_link_libraries(minimgui)
+#target_link_libraries(minimgui imgui::imgui glfw::glfw)
