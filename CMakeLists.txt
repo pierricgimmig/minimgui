@@ -7,7 +7,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 # CONFIG option is important so that CMake doesnt search for modules into the default modules directory
 find_package(imgui CONFIG)
 find_package(glfw3 CONFIG)
-find_package(glew CONFIG)
 
 add_executable(minimgui
     main.cpp
@@ -16,5 +15,4 @@ add_executable(minimgui
     bindings/imgui_impl_glfw.h
     bindings/imgui_impl_opengl3.h)
 
-target_compile_definitions(minimgui PUBLIC IMGUI_IMPL_OPENGL_LOADER_GLEW)
-target_link_libraries(minimgui imgui::imgui GLEW::glew_s glfw::glfw)
+target_link_libraries(minimgui imgui::imgui glfw::glfw)

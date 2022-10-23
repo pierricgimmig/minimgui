@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <string>
 
-#include <GL/glew.h> // Initialize with glewInit()
-
 // Include glfw3.h after our OpenGL definitions
 #include <GLFW/glfw3.h>
 
@@ -61,12 +59,6 @@ int main(int, char **)
 
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1); // Enable vsync
-
-	if (glewInit() != GLEW_OK)
-	{
-		fprintf(stderr, "Failed to initialize OpenGL loader.\n");
-		return 1;
-	}
 
 	SetGlViewportForWindow(window);
 
