@@ -3,7 +3,7 @@ imgui/1.88
 glfw/3.3.8
 
 [generators]
-cmake_multi
+cmake
 
 [imports]
 ./res/bindings, imgui_impl_glfw.cpp -> ../bindings

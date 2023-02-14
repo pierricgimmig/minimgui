@@ -3,7 +3,7 @@ project(minimgui CXX)
 
 set (CMAKE_CXX_STANDARD 11)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo_multi.cmake)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 add_executable(minimgui

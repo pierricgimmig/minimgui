@@ -3,7 +3,7 @@
 rm -rf build
 mkdir build
 cd build
-conan install .. -s build_type=Release
-cmake .. -DCMAKE_BUILD_TYPE=Release
+conan install ..
+cmake ..
 cmake --build .
-./minimgui
+./bin/minimgui
