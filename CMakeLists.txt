@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.15)
 project(minimgui CXX)
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 17)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+find_package(imgui REQUIRED)
+find_package(glfw3 REQUIRED)
 
 add_executable(minimgui
     main.cpp
@@ -13,5 +13,4 @@ add_executable(minimgui
     bindings/imgui_impl_glfw.h
     bindings/imgui_impl_opengl3.h)
 
-conan_target_link_libraries(minimgui)
-#target_link_libraries(minimgui imgui::imgui glfw::glfw)
+target_link_libraries(minimgui imgui::imgui glfw)

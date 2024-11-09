@@ -4,12 +4,16 @@ MinImgui is a bare-bones project using Conan and CMake to build a cross-platform
 
 ## Build and run:
 
+Prerequisites: 
+- Python
+- CMake
+- Conan 2.X
+
+### Windows
 ```bash
-mkdir build
+conan install . --build=missing
 cd build
-conan install .. -s build_type=Release
-conan install .. -s build_type=Debug
-cmake ..
+cmake .. -G "Visual Studio 17 2022" -DCMAKE_TOOLCHAIN_FILE=generators\conan_toolchain.cmake  -DCMAKE_POLICY_DEFAULT_CMP0091=NEW
 cmake --build . --config Release
 ./Release/minimgui(.exe)
 ```
