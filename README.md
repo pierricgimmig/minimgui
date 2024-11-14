@@ -20,6 +20,25 @@ cmake --build . --config Release
 ```
 
 ### Wasm
+
+#### Emscripten Conan profile
+```
+[settings]
+os=Emscripten
+arch=wasm
+compiler=clang
+compiler.version=15
+compiler.libcxx=libc++
+build_type=Release
+
+[tool_requires]
+emsdk/3.1.50
+
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+```
+
+#### Build commands
 ```
 conan install . -pr:b default -pr:h emscripten -s build_type=Release -b missing -of build-web
 cd build-web
