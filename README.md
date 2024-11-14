@@ -9,6 +9,7 @@ Prerequisites:
 - CMake: `pip install cmake`
 - Conan 2.X: `pip install conan`
 - Ninja: `pip install ninja`
+- [emsdk](https://emscripten.org/docs/getting_started/downloads.html)
 
 ### Windows
 ```bash
@@ -42,7 +43,7 @@ tools.cmake.cmaketoolchain:generator=Ninja
 ```
 conan install . -pr:b default -pr:h emscripten -s build_type=Release -b missing -of build-web
 cd build-web
-emcmake cmake .. -DCMAKE_TOOLCHAIN_FILE=build\Release\generators\conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+emcmake cmake .. -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
 ```
 
