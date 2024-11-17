@@ -72,6 +72,8 @@ int main(int, char **)
 	ImGui_ImplOpenGL3_Init(glsl_version.c_str());
 	// Setup Dear ImGui style
 	ImGui::StyleColorsDark();
+  // Docking
+  ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
 	while (!glfwWindowShouldClose(window))
 	{
